@@ -1,5 +1,5 @@
 (function(){
-
+  'use strict';
   angular
     .module('travelFrontendApp')
     .controller('MessagesCtrl', MessagesCtrl);

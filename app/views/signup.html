@@ -1,40 +1,38 @@
-<div class="mdl-layout mdl-js-layout mdl-color--grey-100">
-  <main class="mdl-layout__content">
-    <div class="mdl-card mdl-shadow--6dp" style="margin: 4% auto; width: 450px">
-      <div class="mdl-card__title mdl-color-text--white" style="background-color:#37474f">
-	<h2 class="mdl-card__title-text">Sign up</h2>
+<div class="container-signup-page">
+  <div layout="column" class="signupBox md-whiteframe-z1">
+    <md-toolbar>
+      <h2 class="md-toolbar-tools"><span>Sign up</span></h2>
+    </md-toolbar>
+    <md-content layout="column" class="md-padding">
+      <md-input-container>
+	<label>Name</label>
+	<input type="text" ng-model="name"/>
+      </md-input-container>
+      <md-input-container>
+	<label>First surname</label>
+	<input type="text" ng-model="firstSurname"/>
+      </md-input-container>
+      <md-input-container>
+	<label>Second surname</label>
+	<input type="text" ng-model="secondSurname"/>
+      </md-input-container>
+      <md-input-container>
+	<label>Birthdate</label>
+	<input type="text" ng-model="birthdate"/>
+      </md-input-container>
+      <md-input-container>
+	<label>Username</label>
+	<input type="text" ng-model="username"/>
+      </md-input-container>
+      <md-input-container>
+	<label>Password</label>
+	<input type="password" ng-model="password"/>
+      </md-input-container>
+      <div layout="row" layout-align="center center" style="padding-top:20px;">
+	<md-button class="md-raised md-primary">Sign up</md-button>
+	<div flex="flex"></div>
+	<md-button href="" md-no-ink="md-no-ink">Sign in</md-button>
       </div>
-      <div class="mdl-card__supporting-text">
-	<form action="#">
-	  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label signup-textfield">
-	    <input class="mdl-textfield__input" type="text" id="Name" />
-	    <label class="mdl-textfield__label" for="Name">Name</label>
-	  </div>
-	  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label signup-textfield">
-	    <input class="mdl-textfield__input" type="text" id="surname1" />
-	    <label class="mdl-textfield__label" for="surname1">First surname</label>
-	  </div>
-	  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label signup-textfield">
-	    <input class="mdl-textfield__input" type="text" id="surname2" />
-	    <label class="mdl-textfield__label" for="surname2">Second surname</label>
-	  </div>
-	  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label signup-textfield">
-	    <input class="mdl-textfield__input" type="text" id="Birthdate" />
-	    <label class="mdl-textfield__label" for="Birthdate">Birthdate</label>
-	  </div>
-	  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label signup-textfield">
-	    <input class="mdl-textfield__input" type="text" id="username" />
-	    <label class="mdl-textfield__label" for="username">Username</label>
-	  </div>
-	  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label signup-textfield">
-	    <input class="mdl-textfield__input" type="password" id="userpass" />
-	    <label class="mdl-textfield__label" for="userpass">Password</label>
-	  </div>
-	</form>
-      </div>
-      <div class="mdl-card__actions mdl-card--border">
-	<button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Sign up </button>
-      </div>
-    </div>
-  </main>
+    </md-content>
+  </div>
 </div>

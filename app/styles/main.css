@@ -1,0 +1,40 @@
+body {
+  font-family: 'Roboto';
+}
+
+.loginBox {
+  width: 500px;
+  height: 52%;
+  position: absolute;
+  top: 30%;
+  left: 45%;
+  margin: -70px 0 0 -170px;
+}
+
+.signupBox {
+  width: 500px;
+  height: 720px;
+  position: absolute;
+  top: 30%;
+  left: 45%;
+  margin: -184px 0 0 -170px;
+}
+
+.stretch input  {
+  width: 100%
+}
+
+.container-signup-page {
+  margin: 0;
+  width: 100%;
+  height: 756px;
+  background-color: rgba(0, 0, 0, 0.1)
+}
+
+.cointainer-basic-page {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
