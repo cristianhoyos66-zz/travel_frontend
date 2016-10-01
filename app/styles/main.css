@@ -249,3 +249,8 @@ _:-ms-input-placeholder, :root .demo-graph {
   margin-bottom: 40px;
   z-index: 900;
 }
+
+.signup-textfield {
+  margin-left: 4% !important;
+  width: 374px !important;
+}

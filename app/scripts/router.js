@@ -14,6 +14,18 @@
 
     $stateProvider
 
+      .state('signin', {
+	url: '/signin',
+	templateUrl: 'views/signin.html',
+	controller: 'SigninCtrl as SigninVm',
+      })
+
+      .state('signup', {
+	url: '/signup',
+	templateUrl: 'views/signup.html',
+	controller: 'SignupCtrl as SignupVm',
+      })
+    
       .state('auth', { 
 	abstract: true,
 	url: '',
