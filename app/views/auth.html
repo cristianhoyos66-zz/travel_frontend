@@ -1,28 +1,58 @@
-<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-  <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
-    <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Travels</span>
+<md-sidenav md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left"
+            class="md-whiteframe-z2 md-sidenav-left">
+  <md-toolbar md-theme="custom" class="md-hue-1 md-whiteframe-z2">
+    <md-button layout="row" layout-align="center center" class="md-toolbar-tools md-warn"
+               ui-sref="auth.home">
+      <h1>TRAVELS</h1>
+    </md-button>
+  </md-toolbar>
+  <md-button ng-repeat-start="item in vm.menuItems" layout="column" layout-align="center center"
+             flex class="capitalize" ng-click="vm.selectItem(item)"
+             ui-sref-active="md-warn" ui-sref="{{item.sref}}">
+    <div hide-sm hide-md class="md-tile-content">
+      <i class="material-icons md-36">{{item.icon}}</i>
     </div>
-  </header>
-  <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
-    <header class="demo-drawer-header">
-      <img src="images/user.jpg" class="demo-avatar">
-      <div class="demo-avatar-dropdown">
-        <span>hello@example.com</span>
-      </div>
-    </header>
-    <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-      <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flight</i>Travels
-      </a>
-    </nav>
-  </div>
-  <main class="mdl-layout__content mdl-color--grey-100">
-    <div class="mdl-grid demo-content">
-      <div autoscroll="true" ui-view></div>
+    <div class="md-tile-content">
+      {{item.name}}
     </div>
-  </main>
+  </md-button>
+  <md-divider ng-repeat-end></md-divider>
+</md-sidenav>
+
+<div layout="column" flex>
+  <md-toolbar layout="row" layout-align="center center">
+    <section layout-align="start center" layout-fill flex>
+      <md-button hide-gt-sm ng-click="vm.toggleItemsList()" aria-label="Menu">
+        <i class="material-icons">menu</i>
+      </md-button>
+    </section>
+    <section layout-align="end center">
+      <md-button class="toolbar-button" aria-label="Settings" ng-click="vm.toggleRightSidebar()">
+        <i class="material-icons">menu</i>
+      </md-button>
+    </section>
+  </md-toolbar>
+
+  <md-content flex class="md-padding page-content">
+    <div autoscroll="false" ui-view></div>
+  </md-content>
 </div>
 
-
-
-
+<md-sidenav md-component-id="right"
+            class="md-whiteframe-z2 md-sidenav-right">
+  <md-toolbar>
+    <md-toolbar class="md-warn" layout="row" layout-align="center center">
+      <img class="img-circle" ng-src="images/feynman.jpg">
+      <md-menu md-offset="0 20">
+        <md-button class="capitalize" ng-click="$mdOpenMenu()" aria-label="Open menu">
+          <span>Richard Feynman</span>
+          <i class="material-icons">keyboard_arrow_down</i>
+        </md-button>
+        <md-menu-content width="3">
+          <md-menu-item><md-button ng-click="$mdCloseMenu()" ui-sref="home.profile">Profile</md-button></md-menu-item>
+          <md-menu-item><md-button ng-click="$mdCloseMenu()" ui-sref="home.dashboard">Log out</md-button></md-menu-item>
+        </md-menu-content>
+      </md-menu>
+    </md-toolbar>
+  </md-toolbar>
+</md-sidenav>
