@@ -1,3 +1,38 @@
+<h2>Travels</h2><br>
+
+<md-content layout-padding="">
+  <h4>Filter by:</h4>
+
+   <div class="col-md-3">
+    <md-input-container>
+      <label>Rate</label>
+      <input type="text" ng-model="vm.search.rate"/>
+    </md-input-container>
+  </div>
+
+  <div class="col-md-3">
+    <md-select ng-model="vm.search.status" placeholder="Status">
+      <md-option ng-value="opt" ng-repeat="opt in vm.flightStatus">{{ opt }}</md-option>
+    </md-select>
+  </div>
+
+  <div class="col-md-3" style="margin-top: 14px;">
+    <md-datepicker ng-model="vm.startDate"
+		   md-min-date="vm.currentDate" md-placeholder="Enter start date"></md-datepicker>
+  </div>
+
+  <div class="col-md-3 calendar-filters" style="margin-top: 14px;">
+    <md-datepicker ng-model="vm.endDate" ng-if="vm.startDate"
+		   md-min-date="vm.startDate" md-placeholder="Enter end date"></md-datepicker>
+  </div>
+  
+</div>
+
+
+
+</md-content>
+</div>
+
 <div class="table-responsive-vertical md-whiteframe-z1">
   <table id="table" class="table table-hover table-bordered">
     <thead>
@@ -8,19 +43,18 @@
 	<th>Rate</th>
         <th>Origin</th>
 	<th>Destiny</th>
+	<th>Airplane</th>
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="data in vm.flights track by $index">
+      <tr ng-repeat="data in vm.flights | filter:vm.search:strict track by $index">
         <td data-title="ID">{{$index + 1}}</td>
-        <td data-title="Issue">{{data.issue}}</td>
         <td data-title="Status">{{data.status}}</td>
-        <td data-title="Progress">
-          <md-progress-linear class="table-progress {{data.class}}"
-                              md-mode="determinate"
-                              value={{data.progress}}>
-          </md-progress-linear>
-        </td>
+        <td data-title="Date">{{data.schedule | date:'yyyy-MM-dd HH:mm:ss a'}}</td>
+	<td data-title="Rate">${{data.rate}}</td>
+	<td data-title="Origin">{{data.origin}}</td>
+	<td data-title="Destiny">{{data.destiny}}</td>
+	<td data-title="Airplane">{{data.airplane.reference}}</td>
       </tr>
     </tbody>
   </table>

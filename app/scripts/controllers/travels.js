@@ -11,12 +11,14 @@
   angular.module('travelFrontendApp')
     .controller('TravelsCtrl', TravelsCtrl);
 
-  TravelsCtrl.$inject = ['travelFactory'];
+  TravelsCtrl.$inject = ['travelFactory', 'appConstants'];
 
-  function TravelsCtrl(travelFactory) {
+  function TravelsCtrl(travelFactory, appConstants) {
 
     var vm = this;
     vm.flights = [];
+    vm.flightStatus = appConstants.flightStatus;
+    vm.currentDate = new Date();
 
     getAll();
 
