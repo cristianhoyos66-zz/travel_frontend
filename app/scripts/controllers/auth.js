@@ -12,9 +12,9 @@
     .module('travelFrontendApp')
     .controller('AuthCtrl', AuthCtrl);
 
-  AuthCtrl.$inject = ['navFactory', '$mdSidenav', '$mdBottomSheet', '$log', '$q', '$state', '$mdToast'];
+  AuthCtrl.$inject = ['navFactory', '$mdSidenav', '$mdBottomSheet', '$log', '$q', '$state', '$mdToast', 'authFactory'];
 
-  function AuthCtrl(navFactory, $mdSidenav, $mdBottomSheet, $log, $q, $state, $mdToast) {
+  function AuthCtrl(navFactory, $mdSidenav, $mdBottomSheet, $log, $q, $state, $mdToast, authFactory) {
 
     var vm = this;
 
@@ -25,6 +25,7 @@
     vm.title = $state.current.data.title;
     vm.showSimpleToast = showSimpleToast;
     vm.toggleRightSidebar = toggleRightSidebar;
+    vm.logout = logout;
 
     vm.menuItems = navFactory.menuItems;
 
@@ -80,6 +81,15 @@
           .hideDelay(2000)
           .position('bottom right')
       );
+    }
+
+    function logout() {
+      authFactory.logout()
+	.then(function(data) {
+	  if (!data.session) {
+	    $state.go('signin');
+	  }
+	});
     }
 
   }

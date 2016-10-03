@@ -14,21 +14,12 @@
   navFactory.$inject = [];
   
   function navFactory() {
+
     var menuItems = [
       {
-	name: 'Dashboard',
-        icon: 'dashboard',
-        sref: '.dashboard'
-      },
-      {
-        name: 'Profile',
-        icon: 'person',
-        sref: '.profile'
-      },
-      {
-        name: 'Table',
-        icon: 'view_module',
-        sref: '.table'
+	name: 'Travels',
+        icon: 'airplanemode_active',
+        sref: 'auth.home'
       }
     ];
     

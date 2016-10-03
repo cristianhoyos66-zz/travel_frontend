@@ -17,7 +17,7 @@
       .state('signin', {
 	url: '/signin',
 	templateUrl: 'views/signin.html',
-	controller: 'SigninCtrl as SigninVm',
+	controller: 'SigninCtrl as vm',
       })
 
       .state('signup', {
