@@ -18,7 +18,7 @@ angular.module('travelFrontendApp')
     var service = {
       signin: signin,
       logout: logout
-    }
+    };
 
     return service;
 
@@ -48,7 +48,7 @@ angular.module('travelFrontendApp')
       }
 
       function logoutFailed(error) {
-	console.log('jsonp failed for signin' + error.data);
+	console.log('jsonp failed for logout' + error.data);
       }
     }
     

@@ -36,7 +36,7 @@
       .state('auth.home', {
 	url: '/',
 	templateUrl: 'views/travels.html',
-	controller: 'TravelsCtrl as travelsVm',
+	controller: 'TravelsCtrl as vm',
 	data: {
 	  title: 'Travels'
 	}

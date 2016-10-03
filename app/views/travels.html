@@ -1,1 +1,27 @@
-aasdasd
+<div class="table-responsive-vertical md-whiteframe-z1">
+  <table id="table" class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Status</th>	
+        <th>Date</th>
+	<th>Rate</th>
+        <th>Origin</th>
+	<th>Destiny</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="data in vm.flights track by $index">
+        <td data-title="ID">{{$index + 1}}</td>
+        <td data-title="Issue">{{data.issue}}</td>
+        <td data-title="Status">{{data.status}}</td>
+        <td data-title="Progress">
+          <md-progress-linear class="table-progress {{data.class}}"
+                              md-mode="determinate"
+                              value={{data.progress}}>
+          </md-progress-linear>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

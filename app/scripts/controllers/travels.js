@@ -11,10 +11,23 @@
   angular.module('travelFrontendApp')
     .controller('TravelsCtrl', TravelsCtrl);
 
-  TravelsCtrl.$inject = [];
+  TravelsCtrl.$inject = ['travelFactory'];
 
-  function TravelsCtrl() {
+  function TravelsCtrl(travelFactory) {
 
+    var vm = this;
+    vm.flights = [];
+
+    getAll();
+
+    function getAll() {
+      travelFactory.getAll()
+	.then(function(data) {
+	  vm.flights = data;
+	});
+    }
+    
+    
   }
 
 })();
